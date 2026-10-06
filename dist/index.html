@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0c1714">
   <meta name="description" content="StudioHenge is an independent fantasy game studio imagining worlds with a sense of place, history, and wonder.">
-  <title>StudioHenge — Worlds worth wandering</title>
+  <title>StudioHenge</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230c1714'/%3E%3Cpath d='M14 11v42m36-42v42M14 31h36' stroke='%23e7dcc2' stroke-width='8' stroke-linecap='square'/%3E%3C/svg%3E">
   <link rel="stylesheet" href="styles.css">
   <script src="script.js" defer></script>
@@ -18,14 +18,14 @@
         <a href="#" data-dummy-link title="Coming soon">News</a>
         <a href="#" data-dummy-link title="Coming soon">Forum</a>
         <a href="#" data-dummy-link title="Coming soon">Contact</a>
+        <a class="launch-link" href="#" data-dummy-link title="Game coming soon">Launch Game</a>
       </nav>
       <div class="hero-art" role="img" aria-label="Painted medieval village beside a river, with fields, a church, and a castle in the distance"></div>
       <div class="hero-vignette"></div>
       <div class="hero-content">
-        <div class="hero-logo" role="img" aria-label="StudioHenge"><img src="assets/logo.png" alt="" fetchpriority="high"></div>
-        <h1 id="hero-heading">Worlds worth wandering.</h1>
-        <p class="hero-copy">A love letter to the places that stay with us long after the adventure ends.</p>
-        <div class="hero-actions"><a class="button button-primary" href="#" data-dummy-link title="Game coming soon">Launch Game</a></div>
+        <h1 class="sr-only" id="hero-heading">StudioHenge</h1>
+        <div class="hero-logo" aria-hidden="true"><img src="assets/logo.png" alt="" fetchpriority="high"></div>
+        <p class="hero-copy">StudioHenge makes games that hark back to the romantic days of computing, when every byte mattered and challenge rewarded curious minds. Inspired by the depth and discovery of RuneScape, World of Warcraft, and EverQuest, we build for players who love to think, explore, and earn their victories. We choose quality over quantity, giving every world the care it deserves.</p>
       </div>
       <a class="scroll-cue" href="#world" aria-label="Scroll to the world"><svg viewBox="0 0 32 58" fill="none" aria-hidden="true" focusable="false"><path d="M16 2v49m-11-12 11 12 11-12" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter"/></svg></a>
     </section>
@@ -67,7 +67,7 @@
     <section class="closing" id="next" aria-labelledby="closing-heading"><div class="closing-glow"></div><div class="closing-inner section-shell"><span class="closing-icon" aria-hidden="true">✦</span><p class="eyebrow">THE JOURNEY IS JUST BEGINNING</p><h2 id="closing-heading">There is more<br><em>beyond the hills.</em></h2><p>Come back as the world of StudioHenge takes shape.</p><a class="button button-primary" href="#top">Back to the beginning</a></div></section>
   </main>
 
-  <footer class="site-footer"><div class="footer-brand"><span class="brand-mark" aria-hidden="true">H</span><span>STUDIOHENGE</span></div><p>Worlds worth wandering.</p><nav aria-label="Footer navigation"><a href="#world">The world</a><a href="#studio">Our story</a><a href="#notes">Field notes</a><a href="#top">Back to top</a></nav><div class="footer-bottom"><span>© 2026 StudioHenge</span><span>Made for wonder.</span></div></footer>
+  <footer class="site-footer"><div class="footer-brand"><span class="brand-mark" aria-hidden="true">H</span><span>STUDIOHENGE</span></div><nav aria-label="Footer navigation"><a href="#world">The world</a><a href="#studio">Our story</a><a href="#notes">Field notes</a><a href="#top">Back to top</a></nav><div class="footer-bottom"><span>© 2026 StudioHenge</span><span>Made for wonder.</span></div></footer>
 
   <dialog class="note-dialog" id="note-dialog" aria-labelledby="dialog-title"><button class="dialog-close" type="button" aria-label="Close field note">×</button><div class="dialog-content"><p class="dialog-kicker" id="dialog-kicker"></p><h2 id="dialog-title"></h2><div id="dialog-body"></div><button class="dialog-back" type="button">Back to field notes</button></div></dialog>
 </body>
