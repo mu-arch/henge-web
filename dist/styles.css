@@ -27,3 +27,5 @@
 .scroll-rule::after{content:"";position:absolute;top:7px;left:50%;width:4px;height:4px;border-radius:50%;background:var(--gold-light);animation:mouse-scroll 3.6s ease-in-out infinite}
 @keyframes mouse-scroll{0%{opacity:0;transform:translate(-50%,0)}18%{opacity:1;transform:translate(-50%,0)}70%{opacity:1;transform:translate(-50%,13px)}88%,100%{opacity:0;transform:translate(-50%,13px)}}
 @media(prefers-reduced-motion:reduce){.scroll-rule::after{animation-duration:3.6s!important}}
+
+@media(max-width:700px){#world-heading{font-size:clamp(36px,9.8vw,52px)}}
