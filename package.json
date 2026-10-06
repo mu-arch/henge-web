@@ -1,0 +1,15 @@
+{
+  "name": "studiohenge-website",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@11.19.0",
+  "scripts": {
+    "build": "node scripts/build-blog.mjs",
+    "test": "node --test scripts/build-blog.test.mjs"
+  },
+  "dependencies": {
+    "gray-matter": "4.0.3",
+    "markdown-it": "15.0.2"
+  }
+}

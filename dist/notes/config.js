@@ -1,0 +1,1 @@
+window.STUDIOHENGE_BLOG_FEED_URL = '';

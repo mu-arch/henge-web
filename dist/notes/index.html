@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0c1714">
+  <meta name="description" content="Field notes and development diaries from StudioHenge, a fantasy game studio building worlds worth exploring.">
+  <title>Journal · StudioHenge</title>
+  <link rel="stylesheet" href="../styles.css?v=design-philosophy">
+  <link rel="stylesheet" href="blog.css">
+  <script src="config.js" defer></script>
+  <script src="blog.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <main class="journal-page" id="main">
+    <section class="journal-hero" aria-labelledby="journal-heading">
+      <nav class="top-links" aria-label="Site links">
+        <a href="../">Home</a>
+        <a href="./" aria-current="page">Journal</a>
+        <a href="#" data-dummy-link title="Coming soon">Forum</a>
+        <a href="#" data-dummy-link title="Coming soon">Contact</a>
+        <a class="launch-link" href="#" data-dummy-link title="Game coming soon">Launch Game</a>
+      </nav>
+      <div class="journal-hero-inner section-shell">
+        <p class="journal-kicker"><span aria-hidden="true">✦</span> STUDIOHENGE / JOURNAL</p>
+        <h1 id="journal-heading">From the<br><em>workshop.</em></h1>
+        <p class="journal-deck">Field notes and development diaries from a world in the making.</p>
+      </div>
+    </section>
+
+    <section class="journal-content section-shell" id="journal-list" aria-labelledby="list-heading">
+      <div class="journal-section-heading">
+        <div>
+          <p class="journal-section-label">01 <span></span> THE JOURNAL</p>
+          <h2 id="list-heading">Latest entries<span>.</span></h2>
+        </div>
+        <p>Ideas, decisions, and discoveries along the way.</p>
+      </div>
+      <div class="journal-filters" role="group" aria-label="Filter entries">
+        <button type="button" data-filter="all" aria-pressed="true">All entries</button>
+        <button type="button" data-filter="field-note" aria-pressed="false">Field notes</button>
+        <button type="button" data-filter="dev-diary" aria-pressed="false">Dev diaries</button>
+      </div>
+      <p class="journal-status" id="journal-status" role="status">Opening the journal…</p>
+      <div class="journal-grid" id="journal-grid"></div>
+    </section>
+
+    <article class="journal-article section-shell" id="journal-article" hidden>
+      <a class="journal-back" href="./"><span aria-hidden="true">←</span> All entries</a>
+      <p class="article-meta" id="article-meta"></p>
+      <h1 id="article-title"></h1>
+      <p class="article-excerpt" id="article-excerpt"></p>
+      <div class="article-divider" aria-hidden="true">✦</div>
+      <div class="article-body" id="article-body"></div>
+      <a class="journal-back article-end" href="./"><span aria-hidden="true">←</span> Back to the journal</a>
+    </article>
+  </main>
+  <footer class="journal-footer">
+    <div class="section-shell journal-footer-inner">
+      <a href="../" class="journal-footer-brand">STUDIOHENGE</a>
+      <span>Worlds worth returning to.</span>
+      <a href="../">Back to the beginning ↗</a>
+    </div>
+  </footer>
+</body>
+</html>
