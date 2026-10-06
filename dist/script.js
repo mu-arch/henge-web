@@ -1,16 +1,6 @@
-const menuToggle = document.querySelector('.menu-toggle');
-const siteNav = document.querySelector('.site-nav');
-menuToggle.addEventListener('click', () => {
-  const open = menuToggle.getAttribute('aria-expanded') !== 'true';
-  menuToggle.setAttribute('aria-expanded', String(open));
-  menuToggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
-  siteNav.classList.toggle('open', open);
-});
-siteNav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
-  siteNav.classList.remove('open');
-  menuToggle.setAttribute('aria-expanded', 'false');
-  menuToggle.setAttribute('aria-label', 'Open navigation');
-}));
+document.querySelectorAll('[data-dummy-link]').forEach(link =>
+  link.addEventListener('click', event => event.preventDefault())
+);
 
 const notes = {
   village: {
