@@ -5,3 +5,8 @@
 .top-links a{display:inline-flex;align-items:center;justify-content:center;min-width:112px;min-height:43px;padding:0 17px;border:1px solid rgba(238,224,190,.72);background:rgba(9,25,19,.68);backdrop-filter:blur(6px);color:#f4edda;font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;text-shadow:0 1px 9px rgba(0,0,0,.5);transition:background .2s,border-color .2s,transform .2s}
 .top-links a:hover,.top-links a:focus-visible{background:rgba(211,174,102,.9);border-color:var(--gold-light);color:#142019;transform:translateY(-2px);text-shadow:none}
 @media(max-width:700px){.top-links{top:17px;gap:6px}.top-links a{min-width:76px;min-height:39px;padding:0 9px;font-size:10px;letter-spacing:.08em}}
+.scroll-cue{bottom:17px;width:56px;height:68px;display:grid;place-items:center;color:var(--gold-light)}
+.scroll-cue svg{width:32px;height:58px;filter:drop-shadow(0 2px 8px rgba(0,0,0,.7));animation:arrow-drift 2.2s ease-in-out infinite}
+.scroll-cue:hover svg,.scroll-cue:focus-visible svg{color:#fff0c3}
+@keyframes arrow-drift{0%,100%{transform:translateY(-3px)}50%{transform:translateY(4px)}}
+.hero-actions .button-primary{min-width:228px}
