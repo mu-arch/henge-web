@@ -29,3 +29,6 @@
 @media(prefers-reduced-motion:reduce){.scroll-rule::after{animation-duration:3.6s!important}}
 
 @media(max-width:700px){#world-heading{font-size:clamp(36px,9.8vw,52px)}}
+
+.art-frame{height:min(26.5vw,332px);min-height:180px}
+@media(max-width:700px){.art-frame{height:210px;min-height:0}}
