@@ -7,7 +7,8 @@
   <meta name="description" content="StudioHenge is an independent fantasy game studio imagining worlds with a sense of place, history, and wonder.">
   <title>StudioHenge</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230c1714'/%3E%3Cpath d='M14 11v42m36-42v42M14 31h36' stroke='%23e7dcc2' stroke-width='8' stroke-linecap='square'/%3E%3C/svg%3E">
-  <link rel="stylesheet" href="styles.css?v=footer-and-engineering">
+  <link rel="preload" as="image" href="assets/hengebg.webp" fetchpriority="high">
+  <link rel="stylesheet" href="styles.css?v=lossless-images">
   <script src="script.js" defer></script>
 </head>
 <body id="top">
@@ -24,7 +25,7 @@
       <div class="hero-vignette"></div>
       <div class="hero-content">
         <h1 class="sr-only" id="hero-heading">StudioHenge</h1>
-        <div class="hero-logo" aria-hidden="true"><img src="assets/logo.png" alt="" fetchpriority="high"></div>
+        <div class="hero-logo" aria-hidden="true"><img src="assets/logo.webp" alt="" fetchpriority="high"></div>
         <div class="hero-statement">
           <p class="statement-lead">We’re a game company inspired by an earlier era of computing, when limitations encouraged invention, worlds kept their secrets, and progress had to be earned.</p>
           <div class="statement-rule" aria-hidden="true"></div>
@@ -41,7 +42,7 @@
         <div class="intro-copy"><p>Follow the river beyond old stone bridges, through distant fields, and down roads that vanish over the hills. What waits beyond is ours: original stories, places, and histories written for the world they inhabit.</p><p>We aren't interested in modern people dressed in medieval clothes. Our worlds belong to another time, with different customs, ambitions, virtues, and vices. Expect human stories of love and war, faith and betrayal, revelry and ruin.</p></div>
       </div>
       <div class="art-frame">
-        <img src="assets/hengebg.png" alt="Illustrated riverside village with a church, market, windmill, farmland, and distant castle" loading="lazy">
+        <img src="assets/hengebg.webp" alt="Illustrated riverside village with a church, market, windmill, farmland, and distant castle" loading="lazy" decoding="async">
         <div class="art-shade"></div>
         <div class="art-caption"><span class="caption-index">A GLIMPSE OF THE WORLD</span><strong>Every path begins somewhere.</strong></div>
         <span class="art-corner art-corner-tl" aria-hidden="true"></span><span class="art-corner art-corner-br" aria-hidden="true"></span>
@@ -61,6 +62,6 @@
     <section class="closing" id="next" aria-labelledby="closing-heading"><div class="closing-glow"></div><div class="closing-inner section-shell"><span class="closing-icon" aria-hidden="true">✦</span><p class="eyebrow">A NOTE FROM STUDIOHENGE</p><h2 id="closing-heading">Thank you for<br><em>being here.</em></h2><p>Your interest in Henge means a great deal to us. We’re building it with care, and we look forward to sharing more as the world takes shape.</p><a class="button button-primary" href="#top">Back to the beginning</a></div></section>
   </main>
 
-  <footer class="site-footer"><div class="footer-main"><a class="footer-logo" href="#top" aria-label="StudioHenge, back to top"><img src="assets/logo.png" alt="" loading="lazy"></a><nav class="footer-links" aria-label="Footer navigation"><a href="notes/">News</a><a href="#" data-dummy-link title="Coming soon">Forum</a><a href="#" data-dummy-link title="Coming soon">Contact</a><a class="launch-link" href="#" data-dummy-link title="Game coming soon">Launch Game</a></nav></div><div class="footer-bottom"><span>© 2026 StudioHenge</span><span>:D</span></div></footer>
+  <footer class="site-footer"><div class="footer-main"><a class="footer-logo" href="#top" aria-label="StudioHenge, back to top"><img src="assets/logo.webp" alt="" loading="lazy" decoding="async"></a><nav class="footer-links" aria-label="Footer navigation"><a href="notes/">News</a><a href="#" data-dummy-link title="Coming soon">Forum</a><a href="#" data-dummy-link title="Coming soon">Contact</a><a class="launch-link" href="#" data-dummy-link title="Game coming soon">Launch Game</a></nav></div><div class="footer-bottom"><span>© 2026 StudioHenge</span><span>:D</span></div></footer>
 </body>
 </html>
