@@ -10,7 +10,8 @@ const mediaDirectory = path.join(root, 'content/media');
 const outputDirectory = path.join(root, 'dist/notes');
 const markdown = new MarkdownIt({ html: false, linkify: true, typographer: false });
 const types = new Map([
-  ['field-note', 'Field Note'],
+  ['henge-news', 'Henge News'],
+  ['company-announcement', 'Company Announcement'],
   ['dev-diary', 'Dev Diary']
 ]);
 
@@ -42,9 +43,14 @@ export function compilePost(filename, source) {
 
   const title = requiredText(data.title, 'title', filename);
   const excerpt = requiredText(data.excerpt, 'excerpt', filename);
-  const type = requiredText(data.type, 'type', filename);
+  const cover = data.cover === undefined ? null : requiredText(data.cover, 'cover', filename);
+  if (cover && !/^media\/[a-z0-9]+(?:[._-][a-z0-9]+)*\.(?:png|jpe?g|webp)$/i.test(cover)) {
+    throw new Error(`${filename}: cover must be an image filename in content/media/`);
+  }
+  const requestedType = requiredText(data.type, 'type', filename);
+  const type = requestedType === 'field-note' ? 'henge-news' : requestedType;
   if (!types.has(type)) {
-    throw new Error(`${filename}: type must be field-note or dev-diary`);
+    throw new Error(`${filename}: type must be henge-news, company-announcement, or dev-diary`);
   }
   const date = normalizedDate(frontMatter, filename);
   if (!content.trim()) throw new Error(`${filename}: post body is empty`);
@@ -54,6 +60,7 @@ export function compilePost(filename, source) {
     slug,
     title,
     excerpt,
+    cover,
     type,
     typeLabel: types.get(type),
     date,
@@ -95,6 +102,7 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
   const feed = await buildFeed();
   await mkdir(outputDirectory, { recursive: true });
   await writeFile(path.join(outputDirectory, 'feed.json'), `${JSON.stringify(feed, null, 2)}\n`);
+  await writeFile(path.join(outputDirectory, 'feed.js'), `window.STUDIOHENGE_LOCAL_FEED = ${JSON.stringify(feed)};\n`);
   await copyMedia();
   process.stdout.write(`Built ${feed.posts.length} published blog post(s).\n`);
 }

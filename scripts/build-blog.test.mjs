@@ -13,6 +13,8 @@ test('published posts sort newest first, drafts stay out, and raw HTML stays ine
     await writeFile(path.join(directory, 'unfinished.md'), `---\ndraft: true\n---\n\nNot published.\n`);
     const feed = await buildFeed(directory);
     assert.deepEqual(feed.posts.map(post => post.slug), ['newer-diary', 'older-note']);
+    assert.equal(feed.posts[1].type, 'henge-news');
+    assert.equal(feed.posts[1].typeLabel, 'Henge News');
     assert.equal(feed.posts[0].html.includes('<script>'), false);
     assert.match(feed.posts[0].html, /<strong>real<\/strong>/);
   } finally {
@@ -24,4 +26,8 @@ test('bad dates and unsupported categories stop publication', () => {
   const body = '\n---\n\nA post.';
   assert.throws(() => compilePost('bad-date.md', `---\ntitle: Test\ndate: 2026-02-31\ntype: field-note\nexcerpt: Test.${body}`), /date must be/);
   assert.throws(() => compilePost('bad-type.md', `---\ntitle: Test\ndate: 2026-02-01\ntype: news\nexcerpt: Test.${body}`), /type must be/);
+  assert.equal(compilePost('henge-news.md', `---\ntitle: Test\ndate: 2026-02-01\ntype: henge-news\nexcerpt: Test.${body}`).typeLabel, 'Henge News');
+  assert.equal(compilePost('company-news.md', `---\ntitle: Test\ndate: 2026-02-01\ntype: company-announcement\nexcerpt: Test.${body}`).typeLabel, 'Company Announcement');
+  assert.equal(compilePost('with-cover.md', `---\ntitle: Test\ndate: 2026-02-01\ntype: dev-diary\nexcerpt: Test.\ncover: media/henge-cogwheels.webp${body}`).cover, 'media/henge-cogwheels.webp');
+  assert.throws(() => compilePost('bad-cover.md', `---\ntitle: Test\ndate: 2026-02-01\ntype: dev-diary\nexcerpt: Test.\ncover: ../other.png${body}`), /cover must be/);
 });

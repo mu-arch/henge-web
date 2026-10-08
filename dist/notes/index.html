@@ -4,65 +4,71 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0c1714">
-  <meta name="description" content="Field notes and development diaries from StudioHenge, a fantasy game studio building worlds worth exploring.">
-  <title>Journal · StudioHenge</title>
-  <link rel="preload" as="image" href="../assets/hengebg.webp" fetchpriority="high">
-  <link rel="stylesheet" href="../styles.css?v=active-nav-subtle">
-  <link rel="stylesheet" href="blog.css?v=lossless-images">
+  <meta name="description" content="Henge news, company announcements, and development diaries from StudioHenge.">
+  <title>Posts · StudioHenge</title>
+  <link rel="stylesheet" href="../styles.css?v=footer-refinement">
+  <link rel="stylesheet" href="blog.css?v=compact-news-header">
+  <script>if (new URLSearchParams(location.search).has('post')) document.documentElement.classList.add('article-route');</script>
   <script src="config.js?v=github-feed" defer></script>
-  <script src="blog.js" defer></script>
+  <script src="blog.js?v=local-file-feed-hover" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
   <main class="journal-page" id="main">
-    <section class="journal-hero" aria-labelledby="journal-heading">
+    <section class="journal-hero" aria-label="Posts">
       <nav class="top-links" aria-label="Site links">
-        <a href="../">Home</a>
-        <a href="./" aria-current="page">News</a>
+        <a href="../index.html">Home</a>
+        <a href="index.html" aria-current="page">News</a>
         <a href="#" data-dummy-link title="Coming soon">Forum</a>
-        <a href="#" data-dummy-link title="Coming soon">Contact</a>
+        <a href="../contact/index.html">Contact</a>
         <a class="launch-link" href="#" data-dummy-link title="Game coming soon">Launch Game</a>
       </nav>
       <div class="journal-hero-inner section-shell">
-        <p class="journal-kicker"><span aria-hidden="true">✦</span> STUDIOHENGE / JOURNAL</p>
-        <h1 id="journal-heading">From the<br><em>workshop.</em></h1>
-        <p class="journal-deck">Field notes and development diaries from a world in the making.</p>
+        <div class="journal-hero-copy">
+          <h1 class="sr-only" id="journal-heading">Posts</h1>
+          <div class="journal-brand-row">
+            <a class="journal-brand-logo" href="../index.html" aria-label="StudioHenge home"><img src="../assets/logo.webp" alt="" decoding="async"></a>
+            <a class="journal-brand-suffix" href="index.html" aria-label="Posts index">/ POSTS</a>
+          </div>
+        </div>
+        <img class="journal-hero-emblem" src="../assets/posts-inkwell-quill-trimmed.png" alt="" width="494" height="361" decoding="async">
       </div>
     </section>
 
     <section class="journal-content section-shell" id="journal-list" aria-labelledby="list-heading">
       <div class="journal-section-heading">
-        <div>
-          <p class="journal-section-label">01 <span></span> THE JOURNAL</p>
-          <h2 id="list-heading">Latest entries<span>.</span></h2>
-        </div>
-        <p>Ideas, decisions, and discoveries along the way.</p>
+        <h2 class="journal-section-label" id="list-heading"><span aria-hidden="true"></span> CATEGORIES</h2>
       </div>
       <div class="journal-filters" role="group" aria-label="Filter entries">
         <button type="button" data-filter="all" aria-pressed="true">All entries</button>
-        <button type="button" data-filter="field-note" aria-pressed="false">Field notes</button>
+        <button type="button" data-filter="henge-news" aria-pressed="false">Henge News</button>
         <button type="button" data-filter="dev-diary" aria-pressed="false">Dev diaries</button>
+        <button type="button" data-filter="company-announcement" aria-pressed="false">Company Announcements</button>
       </div>
-      <p class="journal-status" id="journal-status" role="status">Opening the journal…</p>
+      <p class="journal-status" id="journal-status" role="status">Opening the posts…</p>
       <div class="journal-grid" id="journal-grid"></div>
     </section>
 
     <article class="journal-article section-shell" id="journal-article" hidden>
-      <a class="journal-back" href="./"><span aria-hidden="true">←</span> All entries</a>
       <p class="article-meta" id="article-meta"></p>
       <h1 id="article-title"></h1>
       <p class="article-excerpt" id="article-excerpt"></p>
       <div class="article-divider" aria-hidden="true">✦</div>
       <div class="article-body" id="article-body"></div>
-      <a class="journal-back article-end" href="./"><span aria-hidden="true">←</span> Back to the journal</a>
+      <a class="journal-back article-end" href="index.html"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none"><path d="M20 12H4m0 0 7-7m-7 7 7 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Post index</a>
     </article>
   </main>
-  <footer class="journal-footer">
-    <div class="section-shell journal-footer-inner">
-      <a href="../" class="journal-footer-brand">STUDIOHENGE</a>
-      <span>Worlds worth returning to.</span>
-      <a href="../">Back to the beginning ↗</a>
+  <footer class="site-footer">
+    <div class="footer-main">
+      <a class="footer-logo" href="../index.html" aria-label="StudioHenge, home"><img src="../assets/logo.webp" alt="" loading="lazy" decoding="async"></a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="index.html">News</a>
+        <a href="#" data-dummy-link title="Coming soon">Forum</a>
+        <a href="../contact/index.html">Contact</a>
+        <a class="launch-link" href="#" data-dummy-link title="Game coming soon">Launch Game</a>
+      </nav>
     </div>
+    <div class="footer-bottom"><span>© 2026 StudioHenge</span><span>:D</span></div>
   </footer>
 </body>
 </html>

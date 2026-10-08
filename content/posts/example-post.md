@@ -1,8 +1,8 @@
 ---
 title: A title for your first note
 date: 2026-10-06
-type: field-note
-excerpt: A short introduction that appears on the journal index.
+type: henge-news
+excerpt: A short introduction that appears on the Posts index.
 draft: true
 ---
 

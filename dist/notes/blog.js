@@ -23,31 +23,56 @@ function textElement(tag, className, value) {
   return element;
 }
 
+function postCoverUrl(post) {
+  return post.cover && /^media\/[a-z0-9]+(?:[._-][a-z0-9]+)*\.(?:png|jpe?g|webp)$/i.test(post.cover)
+    ? new URL(post.cover, activeFeedUrl).href
+    : null;
+}
+
 function entryCard(post, featured) {
   const card = document.createElement('a');
   card.className = `entry-card${featured ? ' entry-card-featured' : ''}`;
   card.href = `?post=${encodeURIComponent(post.slug)}`;
+  const imageUrl = postCoverUrl(post);
+  if (imageUrl) {
+    card.style.backgroundImage = `linear-gradient(90deg, rgba(8,23,17,.96), rgba(11,30,21,.84) 52%, rgba(12,27,19,.28)), url("${imageUrl}")`;
+    card.style.backgroundPosition = 'center';
+    card.style.backgroundSize = 'cover';
+  }
+  const bottom = document.createElement('span');
+  bottom.className = 'entry-bottom';
+  bottom.append(
+    textElement('span', 'entry-reading-time', `${post.readingMinutes} MIN READ`),
+    textElement('span', 'entry-separator', '·'),
+    textElement('span', 'entry-cta', 'READ ENTRY  ↗')
+  );
   card.append(
     textElement('span', 'entry-meta', `${post.typeLabel}  /  ${formattedDate(post.date)}`),
     textElement('strong', 'entry-title', post.title),
     textElement('span', 'entry-excerpt', post.excerpt),
-    textElement('span', 'entry-bottom', `${post.readingMinutes} MIN READ    ·    READ ENTRY  ↗`)
+    bottom
   );
   return card;
 }
 
 function showList(type = 'all') {
+  document.documentElement.classList.remove('article-route');
   const posts = type === 'all' ? allPosts : allPosts.filter(post => post.type === type);
   grid.replaceChildren(...posts.map((post, index) => entryCard(post, index === 0 && type === 'all')));
   status.textContent = posts.length ? `${posts.length} ${posts.length === 1 ? 'entry' : 'entries'}` :
-    type === 'all' ? 'The first entry is on its way. Come back soon.' : 'No entries in this collection yet.';
+    type === 'all' ? 'The first post is on its way. Come back soon.' : 'No posts in this collection yet.';
   status.classList.toggle('journal-status-empty', posts.length === 0);
   filters.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.filter === type)));
 }
 
 function showArticle(post) {
+  document.documentElement.classList.add('article-route');
   list.hidden = true;
   article.hidden = false;
+  const imageUrl = postCoverUrl(post);
+  const page = document.querySelector('.journal-page');
+  if (imageUrl) page.style.setProperty('--article-cover', `url("${imageUrl}")`);
+  else page.style.removeProperty('--article-cover');
   document.querySelector('#article-meta').textContent = `${post.typeLabel}  /  ${formattedDate(post.date)}  /  ${post.readingMinutes} MIN READ`;
   document.querySelector('#article-title').textContent = post.title;
   document.querySelector('#article-excerpt').textContent = post.excerpt;
@@ -78,17 +103,35 @@ async function fetchFeed(url) {
   }
 }
 
+async function loadFileFeed() {
+  const feed = await new Promise((resolve, reject) => {
+    const script = document.createElement('script');
+    script.src = new URL('feed.js', location.href).href;
+    script.onload = () => resolve(window.STUDIOHENGE_LOCAL_FEED);
+    script.onerror = () => reject(new Error('Local posts feed unavailable'));
+    document.head.append(script);
+  });
+  if (feed?.schemaVersion !== 1 || !Array.isArray(feed.posts)) throw new Error('Invalid local feed');
+  return feed;
+}
+
 async function loadJournal() {
   const localFeed = new URL('feed.json', location.href).href;
-  const remoteFeed = window.STUDIOHENGE_BLOG_FEED_URL;
+  const localPreview = location.hostname === 'localhost' || location.hostname === '127.0.0.1';
+  const remoteFeed = localPreview ? '' : window.STUDIOHENGE_BLOG_FEED_URL;
   let feed;
-  try {
-    activeFeedUrl = remoteFeed || localFeed;
-    feed = await fetchFeed(activeFeedUrl);
-  } catch (error) {
-    if (!remoteFeed) throw error;
+  if (location.protocol === 'file:') {
     activeFeedUrl = localFeed;
-    feed = await fetchFeed(localFeed);
+    feed = await loadFileFeed();
+  } else {
+    try {
+      activeFeedUrl = remoteFeed || localFeed;
+      feed = await fetchFeed(activeFeedUrl);
+    } catch (error) {
+      if (!remoteFeed) throw error;
+      activeFeedUrl = localFeed;
+      feed = await fetchFeed(localFeed);
+    }
   }
   allPosts = feed.posts;
   const slug = new URLSearchParams(location.search).get('post');
@@ -96,7 +139,7 @@ async function loadJournal() {
     const post = allPosts.find(item => item.slug === slug);
     if (post) return showArticle(post);
     showList();
-    status.textContent = 'That entry could not be found. Browse the journal below.';
+    status.textContent = 'That post could not be found. Browse the posts below.';
     return;
   }
   showList();
@@ -104,6 +147,7 @@ async function loadJournal() {
 
 filters.forEach(button => button.addEventListener('click', () => showList(button.dataset.filter)));
 loadJournal().catch(() => {
-  status.textContent = 'The journal is temporarily unavailable. Please try again shortly.';
+  document.documentElement.classList.remove('article-route');
+  status.textContent = 'The posts are temporarily unavailable. Please try again shortly.';
   status.classList.add('journal-status-empty');
 });
