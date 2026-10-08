@@ -29,13 +29,13 @@ function postCoverUrl(post) {
     : null;
 }
 
-function entryCard(post, featured) {
+function entryCard(post) {
   const card = document.createElement('a');
-  card.className = `entry-card${featured ? ' entry-card-featured' : ''}`;
+  card.className = 'entry-card';
   card.href = `?post=${encodeURIComponent(post.slug)}`;
   const imageUrl = postCoverUrl(post);
   if (imageUrl) {
-    card.style.backgroundImage = `linear-gradient(90deg, rgba(8,23,17,.96), rgba(11,30,21,.84) 52%, rgba(12,27,19,.28)), url("${imageUrl}")`;
+    card.style.backgroundImage = `linear-gradient(90deg, rgba(7,20,15,.9), rgba(7,20,15,.62) 72%, rgba(7,20,15,.48)), linear-gradient(0deg, rgba(6,17,12,.68), transparent 52%), url("${imageUrl}")`;
     card.style.backgroundPosition = 'center';
     card.style.backgroundSize = 'cover';
   }
@@ -58,7 +58,7 @@ function entryCard(post, featured) {
 function showList(type = 'all') {
   document.documentElement.classList.remove('article-route');
   const posts = type === 'all' ? allPosts : allPosts.filter(post => post.type === type);
-  grid.replaceChildren(...posts.map((post, index) => entryCard(post, index === 0 && type === 'all')));
+  grid.replaceChildren(...posts.map(entryCard));
   status.textContent = posts.length ? `${posts.length} ${posts.length === 1 ? 'entry' : 'entries'}` :
     type === 'all' ? 'The first post is on its way. Come back soon.' : 'No posts in this collection yet.';
   status.classList.toggle('journal-status-empty', posts.length === 0);

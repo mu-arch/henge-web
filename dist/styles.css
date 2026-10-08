@@ -11,12 +11,30 @@
 .top-links .launch-link:hover,.top-links .launch-link:focus-visible{background:linear-gradient(180deg,#f1d999,#d9b36f);color:#17241b}
 @media(max-width:700px){.top-links{top:13px;padding:3px;max-width:calc(100% - 20px)}.top-links::before,.top-links::after{display:none}.top-links a{min-width:0;min-height:38px;padding:0 8px;font-size:10px;letter-spacing:.055em}.top-links .launch-link{min-width:0;margin-left:3px;padding:0 10px}}
 
-.top-links a[aria-current="page"]{color:#e9d5a5;gap:7px}
-.top-links a[aria-current="page"]::before,.top-links a[aria-current="page"]::after{content:"";width:0;height:0;flex:none;border-top:3px solid transparent;border-bottom:3px solid transparent;opacity:.8}
-.top-links a[aria-current="page"]::before{border-left:4px solid currentColor}
-.top-links a[aria-current="page"]::after{border-right:4px solid currentColor}
-@media(max-width:420px){.top-links a[aria-current="page"]{gap:4px}}
+.top-links a[aria-current="page"]{position:relative;min-width:0;min-height:30px;margin:0 7px;padding:0 11px;border:1px solid rgba(238,208,145,.9);border-radius:1px;background:radial-gradient(circle at 50% 0,#f1d89e 0 2px,transparent 2.5px),radial-gradient(circle at 50% 100%,#f1d89e 0 2px,transparent 2.5px),linear-gradient(180deg,rgba(221,185,113,.2),rgba(119,87,40,.11));box-shadow:inset 0 0 0 2px rgba(8,24,18,.83),inset 0 0 0 3px rgba(232,199,131,.58),0 0 9px rgba(225,184,104,.2);color:#f3dfb3;text-shadow:0 0 8px rgba(232,190,105,.45)}
+.top-links a[aria-current="page"]::before,.top-links a[aria-current="page"]::after{content:"⚜";position:absolute;top:50%;border:0;color:#e6c685;font:normal 12px/1 Georgia,serif;opacity:.92;pointer-events:none;text-shadow:0 0 6px rgba(227,186,109,.55)}
+.top-links a[aria-current="page"]::before{left:-10px;transform:translateY(-50%)}
+.top-links a[aria-current="page"]::after{right:-10px;transform:translateY(-50%)}
 @media(max-width:420px){.top-links{max-width:calc(100% - 12px);padding:2px}.top-links a{padding:0 5px;font-size:9px;letter-spacing:.02em}.top-links .launch-link{margin-left:2px;padding:0 7px}}
+@media(max-width:700px){.top-links a[aria-current="page"]{min-height:29px;margin-inline:4px;padding-inline:7px}.top-links a[aria-current="page"]::before,.top-links a[aria-current="page"]::after{font-size:10px}.top-links a[aria-current="page"]::before{left:-7px}.top-links a[aria-current="page"]::after{right:-7px}}
+
+.nav-toggle{display:none}
+.top-links-items{display:contents}
+@media(max-width:700px){
+  .top-links{width:52px;max-width:none;padding:3px}
+  .hero.mobile-menu-open,.journal-hero.mobile-menu-open,.contact-hero.mobile-menu-open{overflow:visible;z-index:10}
+  .journal-hero.mobile-menu-open::before,.contact-hero.mobile-menu-open::before{transform:none}
+  .top-links .nav-toggle{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;width:44px;height:38px;padding:0;border:0;background:transparent;color:#e9cf98}
+  .nav-toggle span{display:block;width:19px;height:1px;background:currentColor;box-shadow:0 0 5px rgba(229,189,111,.4);transition:transform .2s,opacity .2s}
+  .nav-toggle[aria-expanded="true"] span:first-child{transform:translateY(6px) rotate(45deg)}
+  .nav-toggle[aria-expanded="true"] span:nth-child(2){opacity:0}
+  .nav-toggle[aria-expanded="true"] span:last-child{transform:translateY(-6px) rotate(-45deg)}
+  .top-links-items{display:none;position:absolute;top:calc(100% + 9px);left:50%;transform:translateX(-50%);z-index:6;width:224px;padding:11px;flex-direction:column;align-items:center;gap:4px;border:1px solid rgba(230,202,145,.68);background:linear-gradient(160deg,rgba(25,48,36,.98),rgba(7,22,17,.98));box-shadow:inset 0 0 0 2px rgba(9,24,18,.85),inset 0 0 0 3px rgba(207,170,100,.18),0 18px 40px rgba(0,0,0,.56);backdrop-filter:blur(14px)}
+  .top-links.is-open .top-links-items{display:flex}
+  .top-links .top-links-items a{width:100%;min-width:0;min-height:36px;margin:0;padding:0 12px;font-size:12px;letter-spacing:.12em}
+  .top-links .top-links-items a[aria-current="page"]{width:auto;min-height:29px;margin:4px 0;padding:0 10px}
+  .top-links .top-links-items .launch-link{margin-top:8px;min-height:38px}
+}
 
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 
@@ -46,8 +64,9 @@
 
 .closing p:not(.eyebrow){max-width:640px;margin:25px auto 31px;line-height:1.6}
 .manifesto-grid{align-items:start}
+.manifesto-grid{margin-top:26px}
 .manifesto-copy{padding-top:0}
-@media(max-width:700px){.manifesto-copy{padding-top:30px}}
+@media(max-width:700px){.manifesto-grid{margin-top:27px}.manifesto-copy{padding-top:30px}}
 
 .site-footer{position:relative;display:block;padding:25px max(4vw,24px) 18px;background:radial-gradient(ellipse at 50% -35%,rgba(115,91,43,.16),transparent 58%),linear-gradient(180deg,#0d1b14,#08120e)}
 .site-footer::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(211,174,102,.5) 16%,#e2c488 50%,rgba(211,174,102,.5) 84%,transparent);box-shadow:0 1px 12px rgba(211,174,102,.3)}
@@ -59,3 +78,60 @@
 .site-footer .footer-links a:hover,.site-footer .footer-links a:focus-visible{color:var(--gold-light);text-decoration:underline;text-underline-offset:6px}
 .footer-bottom{margin-top:17px;padding-top:8px;border-top:0}
 @media(max-width:700px){.site-footer{padding:25px 21px 18px}.footer-main{flex-direction:column;gap:8px}.footer-logo{margin:0}.site-footer .footer-links{justify-content:center;flex-wrap:wrap;gap:8px 18px}.site-footer .footer-links a{font-size:10px;letter-spacing:.08em}.footer-bottom{margin-top:18px}}
+
+/* Keep homepage type restrained beside the illustrated sections. */
+.hero-logo{width:min(84vw,740px)}
+@media(min-width:701px){.hero-statement{max-width:min(74vw,650px)}}
+.statement-lead{font-size:clamp(17px,1.5vw,21px)}
+.statement-promise{font-size:clamp(14px,1.15vw,16px)}
+.intro h2{font-size:clamp(42px,4.3vw,63px);line-height:1.06}
+.manifesto h2,.closing h2{font-size:clamp(42px,4.2vw,61px);line-height:1.06}
+.intro-copy p,.manifesto-copy p{font-size:15px;line-height:1.75}
+.principle h3{font-size:clamp(21px,1.8vw,27px)}
+.principle p{font-size:13px}
+.art-caption strong{font-size:clamp(25px,2.6vw,38px)}
+.closing p:not(.eyebrow){font-size:15px}
+@media(max-width:700px){
+  .hero-logo{width:min(82vw,430px)}
+  .statement-lead{font-size:16px}
+  .statement-promise{font-size:14px}
+  #world-heading{font-size:clamp(34px,9vw,47px)}
+  .manifesto h2,.closing h2{font-size:clamp(38px,8.5vw,48px)}
+  .intro-copy p,.manifesto-copy p{font-size:14px}
+  .principle h3{font-size:25px}
+  .art-caption strong{font-size:25px}
+  .closing p:not(.eyebrow){font-size:14px}
+}
+
+/* Forged blade, leather grip and brass crossguard. Decorative art stays outside link hit areas. */
+.top-links{width:660px;height:80px;max-width:calc(100% - 32px);top:7px;padding:0 54px 0 140px;border:0;background:none;box-shadow:none;backdrop-filter:none;filter:drop-shadow(0 7px 7px rgba(0,0,0,.45))}
+.top-links::before,.top-links::after{display:none}
+.sword-art{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:-1}
+.top-links a{min-width:0;flex:1;min-height:30px;padding:0 12px;color:#25332e;text-shadow:0 1px rgba(255,255,255,.45);font-size:10px;letter-spacing:.14em}
+.top-links a:hover,.top-links a:focus-visible{color:#07120d;background:rgba(255,255,255,.22);border-color:rgba(42,55,47,.35)}
+.top-links a[aria-current="page"]{margin:0 7px;padding:0 10px;min-height:27px;color:#263027;border-color:#796b43;background:rgba(220,202,152,.28);box-shadow:inset 0 0 0 2px rgba(222,227,211,.55),inset 0 0 0 3px rgba(109,96,55,.35);text-shadow:none}
+.top-links a[aria-current="page"]::before,.top-links a[aria-current="page"]::after{color:#71603a;text-shadow:0 1px rgba(255,255,255,.4);font-size:11px}
+@media(max-width:700px){
+ .top-links{top:8px;width:220px;height:54px;max-width:calc(100% - 28px);padding:0 0 0 32px}
+ .sword-art{height:54px}
+ .top-links .nav-toggle{color:#29372e;width:60px;height:40px}
+ .top-links-items{top:calc(100% + 5px)}
+ .top-links .top-links-items a{color:#eee8d7;text-shadow:none;flex:none}
+ .top-links .top-links-items a[aria-current="page"]{color:#f3dfb3;border-color:#bb9a60;background:rgba(221,185,113,.12);box-shadow:inset 0 0 0 2px #15241a,inset 0 0 0 3px rgba(232,199,131,.4)}
+ .top-links .top-links-items a[aria-current="page"]::before,.top-links .top-links-items a[aria-current="page"]::after{color:#e6c685}
+}
+
+/* A worn blood mark identifies the current destination on the blade. */
+.top-links a[aria-current="page"],.top-links .top-links-items a[aria-current="page"]{border-color:transparent;background:transparent url('assets/nav-bloodstain.svg') center/100% 100% no-repeat;box-shadow:none;color:#fff0d9;text-shadow:0 1px 2px #39100e;min-height:36px}
+.top-links a[aria-current="page"]::before,.top-links a[aria-current="page"]::after{display:none}
+.top-links a{transition:color .25s,text-shadow .25s,filter .25s}
+.top-links a:hover,.top-links a:focus-visible,.top-links a:not(.launch-link):hover,.top-links a:not(.launch-link):focus-visible{border-color:transparent;background-color:transparent;color:#fffdf1;text-shadow:0 0 3px #fff,0 0 9px #eaf6d3,0 0 17px #eaf6d3}
+.top-links a:focus-visible{outline:1px solid #fbf5d8;outline-offset:2px}
+
+/* Dark engraved lettering keeps contrast against the pale steel. */
+@media(min-width:701px){
+ .top-links a{font-size:12px;font-weight:800;letter-spacing:.1em;color:#000;text-shadow:0 1px 0 rgba(255,255,255,.7)}
+ .top-links a:hover,.top-links a:focus-visible,.top-links a:not(.launch-link):hover,.top-links a:not(.launch-link):focus-visible{color:#101d16;text-shadow:0 1px 0 #fff,0 0 5px #fff5cb,0 0 11px #ffe5a0}
+ .top-links a[aria-current="page"],.top-links .top-links-items a[aria-current="page"]{color:#fff7e7;text-shadow:0 1px 2px #250704,0 0 3px #250704}
+ .top-links a[aria-current="page"]:hover,.top-links a[aria-current="page"]:focus-visible{color:#fff;text-shadow:0 1px 2px #250704,0 0 6px #ffce8d,0 0 12px #ffbd74}
+}

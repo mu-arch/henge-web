@@ -6,22 +6,26 @@
   <meta name="theme-color" content="#0c1714">
   <meta name="description" content="Henge news, company announcements, and development diaries from StudioHenge.">
   <title>Posts · StudioHenge</title>
-  <link rel="stylesheet" href="../styles.css?v=footer-refinement">
-  <link rel="stylesheet" href="blog.css?v=extended-post-backdrop">
+  <link rel="stylesheet" href="../styles.css?v=larger-nav-labels">
+  <link rel="stylesheet" href="blog.css?v=plain-backgrounds">
   <script>if (new URLSearchParams(location.search).has('post')) document.documentElement.classList.add('article-route');</script>
   <script src="config.js?v=github-feed" defer></script>
-  <script src="blog.js?v=local-file-feed-hover" defer></script>
+  <script src="blog.js?v=speckled-post-cards" defer></script>
+  <script src="../nav.js?v=mobile-menu-clip-fix" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
   <main class="journal-page" id="main">
     <section class="journal-hero" aria-label="Posts">
       <nav class="top-links" aria-label="Site links">
-        <a href="../index.html">Home</a>
-        <a href="index.html" aria-current="page">News</a>
-        <a href="#" data-dummy-link title="Coming soon">Forum</a>
-        <a href="../contact/index.html">Contact</a>
-        <a class="launch-link" href="#" data-dummy-link title="Game coming soon">Launch Game</a>
+        <svg class="sword-art" viewBox="0 0 660 80" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="blade" x2="0" y2="1"><stop stop-color="#e8e8d9"/><stop offset=".46" stop-color="#b8c4bf"/><stop offset=".5" stop-color="#e3e8df"/><stop offset=".52" stop-color="#9ba9a4"/><stop offset="1" stop-color="#d4d9cb"/></linearGradient><linearGradient id="brass" x2="1" y2=".3"><stop stop-color="#6e542b"/><stop offset=".4" stop-color="#d5bc7c"/><stop offset=".65" stop-color="#a68a50"/><stop offset="1" stop-color="#69512d"/></linearGradient><pattern id="leather" width="10" height="28" patternUnits="userSpaceOnUse"><rect width="10" height="28" fill="#3c3024"/><path d="M0 0L10 28" stroke="#806344" stroke-width="2"/><path d="M3 0L13 28" stroke="#201e19"/></pattern></defs><path d="M126 19L590 23L654 40L590 57L126 61Z" fill="url(#blade)" stroke="#6a7770"/><path d="M139 23L589 27L637 40L589 53L139 57" fill="none" stroke="#edf0df" stroke-opacity=".4"/><path d="M145 40H616" stroke="#75877e" stroke-opacity=".35"/><rect x="28" y="29" width="91" height="22" rx="4" fill="url(#leather)" stroke="#9f8551"/><path d="M16 26L30 30V50L16 54L5 46V34Z" fill="url(#brass)" stroke="#d7bd7b"/><path d="M112 8L123 5L132 12L128 29L130 51L132 68L123 75L112 72L116 52V28Z" fill="url(#brass)" stroke="#c6ac71"/><path d="M121 14V66" stroke="#f1d999" stroke-opacity=".6"/><path d="M13 34L21 40L13 46L9 40Z" fill="#35473a" stroke="#ad975c"/></svg>
+        <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-menu-links"><span></span><span></span><span></span></button>
+        <div class="top-links-items" id="site-menu-links">
+          <a href="../index.html">Home</a>
+          <a href="index.html" aria-current="page" aria-label="News">News</a>
+          <a href="#" data-dummy-link title="Coming soon">Forum</a>
+          <a href="../contact/index.html">Contact</a>
+        </div>
       </nav>
       <div class="journal-hero-inner section-shell">
         <div class="journal-hero-copy">

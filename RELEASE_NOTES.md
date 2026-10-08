@@ -2,6 +2,18 @@
 
 ## Unreleased
 
+- Limit post index titles to 75% width with more line height and looser lettering.
+
+- Replace the top navigation with a sword, including a leather grip and brass hilt; remove its Launch Game button.
+- Restore original backgrounds without paper grain or speckles; extend post backdrops another 350px.
+
+- Mark the active sword navigation link with a bloodstain and glow on hover; retain the hamburger dropdown on phones.
+- Refine the post cards with darker cover overlays, subtle corner details, and a separated reading link while keeping the cards still on hover.
+- Extend article cover backdrops.
+- Keep the desktop hero statement narrower than its logo and match the gap below the first two section kickers.
+- Reduce homepage text sizes, including the hero copy, section headings, and supporting text; keep the smaller hero logo.
+- Use equal-sized post cards in two desktop columns, with their index logo aligned to the cards.
+- Set article content to a 600px maximum width, reduce its title and body sizes, match the index logo scale, bring content closer to the logo, and move the divider star below the line.
 - Extend the faded cover image farther down individual posts and reduce post title sizes on index cards and article pages.
 - Bring Posts categories and cards closer to the header, including on phones.
 - Use a centered vector arrow beside the article's "Post index" link.
@@ -12,7 +24,6 @@
 - Add a Henge News post announcing the pre-alpha, with an in-game screenshot as its cover.
 - Show post cover images as a faded background behind the article opening, extending into the page, and keep them out of the post body unless included in its Markdown.
 - Give article metadata more line height on phones and arrange the Posts category filters in an evenly spaced, centered mobile grid.
-- Mark the current page in the top navigation with a small triangle on each side of its label, replacing the underline.
 - Rename Field Notes to Henge News and add Company Announcements to the journal categories.
 - Add a Contact page with a clear coming-soon state and working navigation links.
 - Use the StudioHenge logo and "/ CONTACT" on the Contact page, matching the Posts index.
