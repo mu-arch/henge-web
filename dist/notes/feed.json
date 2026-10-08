@@ -1,4 +1,15 @@
 {
   "schemaVersion": 1,
-  "posts": []
+  "posts": [
+    {
+      "slug": "hello-world",
+      "title": "Hello, world",
+      "excerpt": "The first entry in the StudioHenge journal.",
+      "type": "dev-diary",
+      "typeLabel": "Dev Diary",
+      "date": "2026-10-07",
+      "readingMinutes": 1,
+      "html": "<p>Hello, world. This is the first entry in the StudioHenge journal.</p>\n<p>We'll use this space to share progress on Henge: what we're building, the choices behind it, and what we learn along the way. These notes will grow as the world takes shape.</p>\n<p>Thanks for being here.</p>\n"
+    }
+  ]
 }
