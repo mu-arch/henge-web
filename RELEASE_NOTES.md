@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Extend the faded cover image farther down individual posts and reduce post title sizes on index cards and article pages.
 - Bring Posts categories and cards closer to the header, including on phones.
 - Use a centered vector arrow beside the article's "Post index" link.
 - Keep post cards still on hover and highlight only the "Read entry" text in white.
