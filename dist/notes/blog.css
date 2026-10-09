@@ -1,7 +1,7 @@
 .journal-page{position:relative;isolation:isolate;min-height:100vh;background:#0c1714;}
-.article-route .journal-page::before{content:"";position:absolute;z-index:0;top:0;left:0;right:0;height:min(1730px,100%);pointer-events:none;background:linear-gradient(180deg,rgba(5,15,12,.62),rgba(5,15,12,.76) 35%,rgba(7,17,13,.89) 72%,#0c1714 100%),var(--article-cover,url('../assets/hengebg.webp')) center top/cover no-repeat}
+.article-route .journal-page::before{content:"";position:absolute;z-index:0;top:0;left:0;right:0;height:min(1730px,100%);pointer-events:none;background:linear-gradient(180deg,rgba(5,15,12,.62),rgba(5,15,12,.76) 35%,rgba(7,17,13,.89) 72%,#0c1714 100%),var(--article-cover,none) center top/cover no-repeat}
 .journal-hero{position:relative;isolation:isolate;min-height:186px;display:flex;align-items:end;overflow:hidden;background:#15271e}
-.journal-hero::before{content:"";position:absolute;z-index:-2;inset:0;background:url('../assets/posts-desk.webp') center 50%/cover no-repeat;transform:scale(1.025)}
+.journal-hero::before{content:"";position:absolute;z-index:-2;inset:0;background:url('../assets/posts-books-parchments.webp') center 50%/cover no-repeat;transform:scale(1.025)}
 .journal-hero::after{content:"";position:absolute;z-index:-1;inset:0;background:linear-gradient(180deg,rgba(5,15,12,.55),rgba(5,15,12,.58) 32%,rgba(5,15,12,.83) 70%,#0c1714 100%)}
 .journal-hero-inner{display:flex;align-items:center;justify-content:space-between;gap:40px;max-width:1180px;padding-top:72px;padding-bottom:5px}
 .journal-hero-copy{min-width:0}
@@ -96,7 +96,7 @@
   .journal-hero .top-links .launch-link{margin-left:2px;padding:0 7px}
 }
 
-/* The index artwork fades behind the categories, ending 500px from the page top. */
-body:not(.article-route) .journal-page::before{content:"";position:absolute;z-index:-1;top:0;left:0;right:0;height:500px;pointer-events:none;background:linear-gradient(180deg,rgba(5,15,12,.55),rgba(5,15,12,.64) 32%,rgba(7,17,13,.87) 72%,#0c1714 100%),url('../assets/posts-desk.webp') center top/cover no-repeat}
-body:not(.article-route) .journal-hero{background:transparent}
-body:not(.article-route) .journal-hero::before,body:not(.article-route) .journal-hero::after{display:none}
+/* Shift the index artwork 200px upward and fade it out beside the categories. */
+html:not(.article-route) .journal-page::before{content:"";position:absolute;z-index:-1;top:-200px;left:0;right:0;height:500px;pointer-events:none;background:linear-gradient(180deg,rgba(5,15,12,.55),rgba(5,15,12,.64) 32%,rgba(7,17,13,.87) 72%,#0c1714 100%),url('../assets/posts-books-parchments.webp') center top/cover no-repeat}
+html:not(.article-route) .journal-hero{background:transparent}
+html:not(.article-route) .journal-hero::before,html:not(.article-route) .journal-hero::after{display:none}

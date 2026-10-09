@@ -5,7 +5,7 @@
       "slug": "how-were-focusing-on-performance-in-henge",
       "title": "How we're focusing on performance in Henge",
       "excerpt": "Why we test Henge on old machines, and how we're preparing it for tablets.",
-      "cover": "media/henge-two-cogwheels.webp",
+      "cover": null,
       "type": "dev-diary",
       "typeLabel": "Dev Diary",
       "date": "2026-10-08",

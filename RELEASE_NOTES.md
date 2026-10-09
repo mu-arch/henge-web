@@ -2,6 +2,14 @@
 
 ## Unreleased
 
+- Shift the posts index backdrop upward by 200px so its fade ends near the categories, and remove the performance diary cover image.
+
+- Regenerate the posts backdrop with lighter wood, medieval books, and parchments.
+
+- Replace the posts index backdrop with pixel-painted parchment sheets and scrolls; preserve the fullsize original and serve compressed WebP.
+
+- Match the sword blade to the ivory and warm gray logo, with tapered scratches, clustered hairline scuffs, and recessed edge nicks.
+
 - Extend the news index desk backdrop behind the categories, fading out 500px from the page top.
 
 - Add a flat blade face behind the links, compact uppercase sans-serif lettering, and restore the original dark bloodstain. Refine the blade bevels, wrapped grip, and jeweled brass guard.

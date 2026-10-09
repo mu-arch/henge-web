@@ -3,7 +3,6 @@ title: How we're focusing on performance in Henge
 date: 2026-10-08
 type: dev-diary
 excerpt: Why we test Henge on old machines, and how we're preparing it for tablets.
-cover: media/henge-two-cogwheels.webp
 ---
 
 Efficiency shapes Henge from the start. The same C89 core runs our software renderer in a browser and on Windows 3.1 hardware. We profile where each frame's time goes on real period machines, with a target of 15 frames per second on a Cyrix MediaGX. Heavier scenes still fall short of that mark, which gives us specific work to do.
