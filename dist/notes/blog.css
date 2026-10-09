@@ -95,3 +95,8 @@
   .journal-hero .top-links a{padding:0 5px;font-size:9px;letter-spacing:.02em}
   .journal-hero .top-links .launch-link{margin-left:2px;padding:0 7px}
 }
+
+/* The index artwork fades behind the categories, ending 500px from the page top. */
+body:not(.article-route) .journal-page::before{content:"";position:absolute;z-index:-1;top:0;left:0;right:0;height:500px;pointer-events:none;background:linear-gradient(180deg,rgba(5,15,12,.55),rgba(5,15,12,.64) 32%,rgba(7,17,13,.87) 72%,#0c1714 100%),url('../assets/posts-desk.webp') center top/cover no-repeat}
+body:not(.article-route) .journal-hero{background:transparent}
+body:not(.article-route) .journal-hero::before,body:not(.article-route) .journal-hero::after{display:none}

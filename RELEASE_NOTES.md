@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+- Extend the news index desk backdrop behind the categories, fading out 500px from the page top.
+
+- Add a flat blade face behind the links, compact uppercase sans-serif lettering, and restore the original dark bloodstain. Refine the blade bevels, wrapped grip, and jeweled brass guard.
+
 - Limit post index titles to 75% width with more line height and looser lettering.
 
 - Replace the top navigation with a sword, including a leather grip and brass hilt; remove its Launch Game button.

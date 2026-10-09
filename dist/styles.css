@@ -128,10 +128,13 @@
 .top-links a:hover,.top-links a:focus-visible,.top-links a:not(.launch-link):hover,.top-links a:not(.launch-link):focus-visible{border-color:transparent;background-color:transparent;color:#fffdf1;text-shadow:0 0 3px #fff,0 0 9px #eaf6d3,0 0 17px #eaf6d3}
 .top-links a:focus-visible{outline:1px solid #fbf5d8;outline-offset:2px}
 
-/* Dark engraved lettering keeps contrast against the pale steel. */
+/* Compact inscriptions on the flat central face of the blade. */
 @media(min-width:701px){
- .top-links a{font-size:12px;font-weight:800;letter-spacing:.1em;color:#000;text-shadow:0 1px 0 rgba(255,255,255,.7)}
- .top-links a:hover,.top-links a:focus-visible,.top-links a:not(.launch-link):hover,.top-links a:not(.launch-link):focus-visible{color:#101d16;text-shadow:0 1px 0 #fff,0 0 5px #fff5cb,0 0 11px #ffe5a0}
- .top-links a[aria-current="page"],.top-links .top-links-items a[aria-current="page"]{color:#fff7e7;text-shadow:0 1px 2px #250704,0 0 3px #250704}
- .top-links a[aria-current="page"]:hover,.top-links a[aria-current="page"]:focus-visible{color:#fff;text-shadow:0 1px 2px #250704,0 0 6px #ffce8d,0 0 12px #ffbd74}
+ .top-links-items{display:grid;grid-template-columns:repeat(4,1fr);align-items:center;width:100%;gap:2px}
+ .top-links .top-links-items a{position:relative;min-width:0;min-height:36px;margin:0;padding:0 8px;font:700 13px/1.1 Arial,Helvetica,sans-serif;letter-spacing:.09em;text-transform:uppercase;color:#000;text-shadow:0 1px 0 rgba(255,255,255,.65)}
+ .top-links .top-links-items a[aria-current="page"]{background:transparent url('assets/nav-bloodstain.svg') center/100% 100% no-repeat;border-color:transparent;box-shadow:none;color:#fff7e7;text-shadow:0 1px 2px #250704,0 0 3px #250704}
+ .top-links .top-links-items a:hover,.top-links .top-links-items a:focus-visible{color:#000;text-shadow:0 1px 0 #fff,0 0 5px #fff5cb,0 0 11px #ffe5a0}
+ .top-links .top-links-items a[aria-current="page"]:hover,.top-links .top-links-items a[aria-current="page"]:focus-visible{color:#fff;text-shadow:0 1px 2px #250704,0 0 6px #ffce8d,0 0 12px #ffbd74}
+ .top-links .top-links-items a:focus-visible{outline:1px solid #354438;outline-offset:-3px}
 }
+@media(max-width:700px){.top-links .top-links-items a{font-family:Arial,Helvetica,sans-serif;font-size:12px;letter-spacing:.09em;text-transform:uppercase;font-weight:700}}
